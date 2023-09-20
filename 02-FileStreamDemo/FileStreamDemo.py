@@ -15,8 +15,8 @@ if __name__ == "__main__":
     logger = Log4j(spark)
 
     raw_df = spark.readStream \
-        .format("json") \
-        .option("path", "input") \
+        .format("parquet") \
+        .option("path", "SampleData/parquet") \
         .option("maxFilesPerTrigger", 1) \
         .load()
 
