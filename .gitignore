@@ -10,3 +10,7 @@
 *.crc
 */*/_SUCCESS
 .idea
+02-FileStreamDemo/checkpoint_dir
+02-FileStreamDemo/SampleData/out
+02-FileStreamDemo/SampleData/csv/output
+chk-point-dir

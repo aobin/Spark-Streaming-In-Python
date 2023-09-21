@@ -14,7 +14,7 @@ if __name__ == "__main__":
     surveyDF = spark.read \
         .option("header", "true") \
         .option("inferSchema", "true") \
-        .csv("data/sample.csv")
+        .csv("/home/aobin/PycharmProjects/Spark-Streaming-In-Python/00-HelloSparkSQL/data/sample.csv")
 
     surveyDF.createOrReplaceTempView("survey_tbl")
     countDF = spark.sql("select Country, count(1) as count from survey_tbl where Age<40 group by Country")

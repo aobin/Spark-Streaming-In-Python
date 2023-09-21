@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     raw_df = spark.readStream \
         .format("parquet") \
-        .option("path", "SampleData/parquet") \
+        .option("path", "/home/aobin/PycharmProjects/Spark-Streaming-In-Python/02-FileStreamDemo/SampleData/parquet") \
         .option("maxFilesPerTrigger", 1) \
         .load()
 
