@@ -17,7 +17,7 @@ csvDF = spark \
     .readStream \
     .option("sep", ",") \
     .schema(userSchema) \
-    .csv("/home/aobin/PycharmProjects/Spark-Streaming-In-Python/02-FileStreamDemo/SampleData/csv")
+    .csv("SampleData/csv")
     
 transformedDF = csvDF.selectExpr("*","age +1 as addAge")
 
@@ -27,7 +27,7 @@ csvData = transformedDF.writeStream \
         .format("json") \
         .outputMode("append") \
         .option("checkpointLocation", "chk-point-dir") \
-        .option("path","/home/aobin/PycharmProjects/Spark-Streaming-In-Python/02-FileStreamDemo/SampleData/csv/output") \
+        .option("path","SampleData/csv/output") \
         .start()
 
 csvData.awaitTermination()
